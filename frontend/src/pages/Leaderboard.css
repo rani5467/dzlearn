@@ -1,0 +1,101 @@
+.lb-page { padding: 32px 0; }
+
+.lb-tabs { display: flex; gap: 8px; margin-bottom: 24px; }
+
+.lb-tab {
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: var(--font);
+  transition: var(--transition);
+}
+
+.lb-tab:hover { color: var(--text); }
+.lb-tab.active { border-color: var(--gold); background: var(--gold-glow); color: var(--gold); }
+
+.lb-table { overflow: hidden; padding: 0 !important; }
+
+.lb-table-header {
+  display: grid;
+  grid-template-columns: 60px 1fr 120px 100px 80px 80px;
+  gap: 0;
+  padding: 10px 20px;
+  background: var(--surface2);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border);
+}
+
+.lb-table-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 120px 100px 80px 80px;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.lb-table-row:last-child { border-bottom: none; }
+.lb-table-row:hover { background: var(--surface2); }
+.lb-table-row.is-me { background: rgba(0,217,126,0.04); border-right: 3px solid var(--primary); }
+
+.lb-rank-cell { font-size: 1.1rem; font-weight: 700; }
+
+.lb-user-cell { display: flex; align-items: center; gap: 10px; min-width: 0; }
+
+.lb-av {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface3);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.lb-uname { font-weight: 700; font-size: 0.9rem; }
+.lb-wilaya-cell { font-size: 0.82rem; color: var(--text-muted); }
+.lb-xp-cell    { font-weight: 700; color: var(--primary); font-size: 0.88rem; }
+.lb-streak-cell { color: var(--gold); font-size: 0.82rem; }
+.lb-acc-cell   { color: var(--blue); font-size: 0.82rem; }
+
+.you-badge {
+  background: var(--primary);
+  color: #000;
+  font-size: 0.65rem;
+  padding: 1px 6px;
+  border-radius: 8px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .lb-table-header,
+  .lb-table-row {
+    grid-template-columns: 50px 1fr 80px 80px;
+  }
+  .lb-table-header span:nth-child(3),
+  .lb-table-row .lb-acc-cell { display: none; }
+  .lb-wilaya-cell { font-size: 0.75rem; }
+}
+
+@media (max-width: 500px) {
+  .lb-table-header,
+  .lb-table-row {
+    grid-template-columns: 40px 1fr 80px;
+  }
+  .lb-table-header span:nth-child(5),
+  .lb-table-row .lb-streak-cell { display: none; }
+}
