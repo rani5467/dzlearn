@@ -1,0 +1,13 @@
+{
+  "name": "dzlearn",
+  "version": "1.0.0",
+  "description": "DzLearn - Algerian Educational Platform",
+  "main": "backend/src/server.js",
+  "scripts": {
+    "start": "node backend/src/server.js",
+    "build": "cd frontend && npm install && npm run build"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
